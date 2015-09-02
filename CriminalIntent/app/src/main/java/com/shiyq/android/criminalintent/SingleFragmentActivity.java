@@ -8,7 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 /**
  * Created by shiyq on 15-8-30.
  */
-public abstract class SingleFragmentActivity extends AppCompatActivity{
+public abstract class SingleFragmentActivity extends AppCompatActivity {
     protected abstract Fragment createFragment();
 
     @Override
@@ -18,7 +18,7 @@ public abstract class SingleFragmentActivity extends AppCompatActivity{
         FragmentManager fm = getFragmentManager();
         Fragment fragment = fm.findFragmentById(R.id.fragmentContainer);
 
-        if(fragment == null){
+        if (fragment == null) {
             fragment = createFragment();
             fm.beginTransaction().add(R.id.fragmentContainer, fragment).commit();
         }

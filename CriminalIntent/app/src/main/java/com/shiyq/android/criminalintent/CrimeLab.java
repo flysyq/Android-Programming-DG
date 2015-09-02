@@ -15,18 +15,19 @@ public class CrimeLab {
     private static CrimeLab sCrimeLab;
     private Context mAppContext;
 
-    private CrimeLab(Context appContext){
+    private CrimeLab(Context appContext) {
         mAppContext = appContext;
         mCrimes = new ArrayList<Crime>();
-        for(int i = 0;i<100;i++){
+        for (int i = 0; i < 100; i++) {
             Crime c = new Crime();
             c.setmTitle("Crime #" + i);
-            c.setmSolved(i%2==0);
+            c.setmSolved(i % 2 == 0);
             mCrimes.add(c);
         }
     }
-    public static CrimeLab get(Context c){
-        if(sCrimeLab == null){
+
+    public static CrimeLab get(Context c) {
+        if (sCrimeLab == null) {
             sCrimeLab = new CrimeLab(c.getApplicationContext());
         }
         return sCrimeLab;
@@ -36,9 +37,9 @@ public class CrimeLab {
         return mCrimes;
     }
 
-    public Crime getCrime(UUID id){
-        for(Crime c: mCrimes){
-            if(c.getmId().equals(id)){
+    public Crime getCrime(UUID id) {
+        for (Crime c : mCrimes) {
+            if (c.getmId().equals(id)) {
                 return c;
             }
         }
