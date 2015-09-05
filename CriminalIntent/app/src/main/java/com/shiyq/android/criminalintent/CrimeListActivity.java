@@ -1,6 +1,6 @@
 package com.shiyq.android.criminalintent;
 
-import android.app.Fragment;
+import android.support.v4.app.Fragment;
 
 /**
  * Created by shiyq on 15-8-30.

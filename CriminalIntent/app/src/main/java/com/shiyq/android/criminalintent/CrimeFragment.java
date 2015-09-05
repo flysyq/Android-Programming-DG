@@ -23,6 +23,7 @@ import java.util.UUID;
 public class CrimeFragment extends Fragment {
 
     public static final String EXTRA_CRIME_ID = "com.shiyq.android.criminalIntent.crime_id";
+    private static final String DIALOG_DATE = "date";
 
     private Crime mCrime;
     private EditText mTitleField;
@@ -62,8 +63,13 @@ public class CrimeFragment extends Fragment {
         mDateButton = (Button) v.findViewById(R.id.crime_date);
         String mDateString = DateFormat.getDateInstance(DateFormat.FULL, Locale.CHINESE).format(mCrime.getmDate());
         mDateButton.setText(mDateString);
-        mDateButton.setEnabled(false);
-
+       // mDateButton.setEnabled(false);
+        mDateButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                
+            }
+        });
         mSolvedCheckBox = (CheckBox) v.findViewById(R.id.crime_solved);
         mSolvedCheckBox.setChecked(mCrime.ismSolved());
         mSolvedCheckBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
